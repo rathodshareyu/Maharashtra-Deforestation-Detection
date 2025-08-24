@@ -105,10 +105,10 @@ def show_Akola():
     )
 
     # Build path to images folder
-    img_path = os.path.join(BASE_DIR, "images", "mh.webp")
+    img_path = os.path.join(BASE_DIR, "images", "akola.jpg")
 
     # Show image
-    st.image(img_path, caption="Primary Forest Loss in Maharashtra")
+    st.image(img_path, caption="Akola Maharashtra")
 
     # Use a relative path for the image
     #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\akola.jpg", caption="Akola Maharashtra")
@@ -307,6 +307,7 @@ def show_Akola():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
