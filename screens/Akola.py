@@ -6,6 +6,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import os
 from components.navbar import navbar
+from pathlib import Path
 
 
 def show_Akola():
@@ -300,5 +301,6 @@ def show_Akola():
     st.dataframe(selected_data.head())    
 
         
+
 
 
