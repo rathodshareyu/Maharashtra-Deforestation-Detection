@@ -52,7 +52,7 @@ def show_Yavatmal():
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
     # Path to the data folder
-    data_path = os.path.join(BASE_DIR, "forest_data", "Akola")
+    data_path = os.path.join(BASE_DIR, "forest_data", "Yavatmal")
 
     datasets = {
     '2019': pd.read_csv(os.path.join(data_path, "yml2019.csv")),
@@ -308,3 +308,4 @@ def show_Yavatmal():
     st.dataframe(selected_data.head())    
 
         
+
