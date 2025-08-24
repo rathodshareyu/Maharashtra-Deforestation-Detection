@@ -29,14 +29,14 @@ def show_Datasets():
     # Load CSV
     df = pd.read_csv(csv_path)
 
-    st.write("Maharashtra Forest Data")
+    st.subheader("Maharashtra Forest Data")
     st.dataframe(df)    
 
     
     #df = pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\MH-combine.csv")
 
     # Show only the first 10 rows
-    st.subheader("CSV Preview (first 10 rows)")
+    st.write("CSV Preview (first 5 rows)")
     st.dataframe(df.head())
 
     # Optionally show dataset info
@@ -46,5 +46,6 @@ def show_Datasets():
     st.write("Null Values:", df.isnull().sum())
 
     st.write("Month:", df.Month.unique())
+
 
 
