@@ -7,14 +7,16 @@ import matplotlib.pyplot as plt
 from components.navbar import navbar
 from pathlib import Path
 
-try:
-    BASE_DIR = Path(__file__).resolve().parent.parent
-except NameError:
-    BASE_DIR = Path.cwd()
-
 
 def show_Amravati():
     navbar("Amravati")
+
+    try:
+        # Works in normal Python execution
+        BASE_DIR = Path(__file__).resolve().parent.parent
+    except NameError:
+        # Fallback for Streamlit Cloud where __file__ is not available
+        BASE_DIR = Path.cwd()
     
     #col1, col2= st.columns(2)
 
@@ -303,6 +305,7 @@ def show_Amravati():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
