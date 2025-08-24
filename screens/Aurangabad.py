@@ -4,11 +4,20 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
+import os
+from pathlib import Path
 from components.navbar import navbar
 
 
 def show_Aurangabad():
     navbar("Aurangabad")
+    try:
+        # Works in normal Python execution
+        BASE_DIR = Path(__file__).resolve().parent.parent
+    except NameError:
+        # Fallback for Streamlit Cloud where __file__ is not available
+        BASE_DIR = Path.cwd()
+    
     #col1, col2= st.columns(2)
 
     #with col1:
@@ -37,19 +46,33 @@ def show_Aurangabad():
     # Display the map using the DataFrame
     st.map(data)
 
+    # Get the absolute path of the project root
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+    # Path to the data folder
+    data_path = os.path.join(BASE_DIR, "forest_data", "Akola")
+
+    datasets = {
+    '2019': pd.read_csv(os.path.join(data_path, "arg2019.csv")),
+    '2020': pd.read_csv(os.path.join(data_path, "arg2020.csv")),
+    '2021': pd.read_csv(os.path.join(data_path, "arg2021.csv")),
+    '2022': pd.read_csv(os.path.join(data_path, "arg2022.csv")),
+    '2023': pd.read_csv(os.path.join(data_path, "arg2023.csv")),
+    '2024': pd.read_csv(os.path.join(data_path, "arg2024.csv")),
+    '2025': pd.read_csv(os.path.join(data_path, "arg2025.csv"))
+    }
 
 
     # Load datasets from CSV files
-    datasets = {
-        '2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2019.csv"),
-        '2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2020.csv"),
-        '2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2021.csv"),
-        '2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2022.csv"),
-        '2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2023.csv"),
-        '2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2024.csv"),
-        "2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2025.csv")
-    }
+    #datasets = {
+        #'2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2019.csv"),
+        #'2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2020.csv"),
+        #'2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2021.csv"),
+        #'2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2022.csv"),
+        #'2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2023.csv"),
+        #'2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2024.csv"),
+        #"2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Aurangabad\arg2025.csv")
+    #}
 
     # Sidebar dataset selection
     st.sidebar.title("Select Dataset")
@@ -79,8 +102,14 @@ def show_Aurangabad():
         height=200,
     )
 
+     # Build path to images folder
+    img_path = os.path.join(BASE_DIR, "images", "akola.jpg")
+
+    # Show image
+    st.image(img_path, caption="Akola Maharashtra")
+
     # Use a relative path for the image
-    st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\arg.webp", caption="Aurangabad Maharashtra")
+    #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\arg.webp", caption="Aurangabad Maharashtra")
 
     components.html(
         """
@@ -274,4 +303,5 @@ def show_Aurangabad():
     # ✅ Show dataset preview below charts
     st.subheader("📑 Dataset Preview")
     st.dataframe(selected_data.head())    
+
         
