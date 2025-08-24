@@ -104,8 +104,14 @@ def show_Akola():
         height=200,
     )
 
+    # Build path to images folder
+    img_path = os.path.join(BASE_DIR, "images", "mh.webp")
+
+    # Show image
+    st.image(img_path, caption="Primary Forest Loss in Maharashtra")
+
     # Use a relative path for the image
-    st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\akola.jpg", caption="Akola Maharashtra")
+    #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\akola.jpg", caption="Akola Maharashtra")
 
     components.html(
         """
@@ -301,6 +307,7 @@ def show_Akola():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
