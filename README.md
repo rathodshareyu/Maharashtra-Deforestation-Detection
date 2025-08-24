@@ -2,5 +2,8 @@
 <br>
 <p>Link to this website: https://maharashtra-deforestation-detectiongit-7ddyxv2cwpxrdcvobajdjy.streamlit.app/</p>
 <br>
-![A description of the image, e.g., Forest trees](images/Amt.webp)
+<p align="center">
+  <img src="images/Amt.webp" alt="A view of forest trees">
+</p>
+
 
