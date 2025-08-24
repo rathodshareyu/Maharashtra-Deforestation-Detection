@@ -9,8 +9,6 @@ from components.navbar import navbar
 
 def show_Amravati():
     navbar("Amravati")
-    # Get project root (where app.py lives)
-    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
     
     #col1, col2= st.columns(2)
 
@@ -40,6 +38,8 @@ def show_Amravati():
     # Display the map using the DataFrame
     st.map(data)
 
+    # Get project root (where app.py lives)
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
      # Path to the data folder
     data_path = os.path.join(BASE_DIR, "forest_data", "Amravati")
@@ -291,4 +291,5 @@ def show_Amravati():
     st.dataframe(selected_data.head())    
 
         
+
 
