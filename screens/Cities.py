@@ -29,7 +29,7 @@ def show_Cities():
         # Path to images
         img_path = os.path.join(BASE_DIR, "images", "nagpur.webp")
 
-        st.image(img_path, caption="Amravati Maharashtra")
+        st.image(img_path, caption="Nagpur Maharashtra")
         
         if st.button("➡ Nagpur Data", key="btn2"):
             st.session_state.page = "Nagpur"
@@ -45,20 +45,36 @@ def show_Cities():
     col4, col5, col6 = st.columns(3)
 
     with col4:
-        st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\akola.jpg",caption="Akola Maharashtra")
+        #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\akola.jpg",caption="Akola Maharashtra")
+        # Path to images
+        img_path = os.path.join(BASE_DIR, "images", "akola.jpg")
+
+        st.image(img_path, caption="Akola Maharashtra")
+    
         if st.button("➡ Akola Data", key="btn4"):
             st.session_state.page = "Akola"
             st.rerun()
 
     with col5:
-        st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\yml.jpg",caption="Yavatmal Amravati")
+        #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\yml.jpg",caption="Yavatmal Amravati")
+        # Path to images
+        img_path = os.path.join(BASE_DIR, "images", "yml.jpg")
+
+        st.image(img_path, caption="Yavatmal Maharashtra")
+        
         if st.button("➡ Yavatmal Data", key="btn5"):
             st.session_state.page = "Yavatmal"
             st.rerun()
 
     with col6:
-        st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\arg.webp",caption="Aurangabad amravati")
+        #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\arg.webp",caption="Aurangabad amravati")
+        # Path to images
+        img_path = os.path.join(BASE_DIR, "images", "arg.webp")
+
+        st.image(img_path, caption="Aurangabad Maharashtra")
+        
         if st.button("⬅ Aurangabad Data", key="btn6"):
             st.session_state.page = "Aurangabad"
             st.rerun()
+
 
