@@ -37,7 +37,7 @@ def show_Datasets():
 
     # Show only the first 10 rows
     st.subheader("CSV Preview (first 10 rows)")
-    st.dataframe(df.head(10))
+    st.dataframe(df.head())
 
     # Optionally show dataset info
     st.write("Shape:", df.shape)
@@ -46,4 +46,5 @@ def show_Datasets():
     st.write("Null Values:", df.isnull().sum())
 
     st.write("Month:", df.Month.unique())
+
 
