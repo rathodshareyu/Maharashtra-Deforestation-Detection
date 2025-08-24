@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
+import os
 from components.navbar import navbar
 from pathlib import Path
 
@@ -305,6 +306,7 @@ def show_Amravati():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
