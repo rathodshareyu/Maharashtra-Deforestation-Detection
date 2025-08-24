@@ -5,8 +5,8 @@ import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
 import os
-from pathlib import Path
 from components.navbar import navbar
+from pathlib import Path
 
 
 def show_Aurangabad():
@@ -50,7 +50,7 @@ def show_Aurangabad():
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
     # Path to the data folder
-    data_path = os.path.join(BASE_DIR, "forest_data", "Akola")
+    data_path = os.path.join(BASE_DIR, "forest_data", "Aurangabad")
 
     datasets = {
     '2019': pd.read_csv(os.path.join(data_path, "arg2019.csv")),
@@ -305,4 +305,5 @@ def show_Aurangabad():
     st.dataframe(selected_data.head())    
 
         
+
 
