@@ -50,16 +50,16 @@ def show_Nagpur():
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
     # Path to the data folder
-    data_path = os.path.join(BASE_DIR, "forest_data", "Akola")
+    data_path = os.path.join(BASE_DIR, "forest_data", "Nagpur")
 
     datasets = {
-    '2019': pd.read_csv(os.path.join(data_path, "akola2019.csv")),
-    '2020': pd.read_csv(os.path.join(data_path, "akola2020.csv")),
-    '2021': pd.read_csv(os.path.join(data_path, "akola2021.csv")),
-    '2022': pd.read_csv(os.path.join(data_path, "akola2022.csv")),
-    '2023': pd.read_csv(os.path.join(data_path, "akola2023.csv")),
-    '2024': pd.read_csv(os.path.join(data_path, "akola2024.csv")),
-    '2025': pd.read_csv(os.path.join(data_path, "akola2025.csv"))
+    '2019': pd.read_csv(os.path.join(data_path, "ng2019.csv")),
+    '2020': pd.read_csv(os.path.join(data_path, "ng2020.csv")),
+    '2021': pd.read_csv(os.path.join(data_path, "ng2021.csv")),
+    '2022': pd.read_csv(os.path.join(data_path, "ng2022.csv")),
+    '2023': pd.read_csv(os.path.join(data_path, "ng2023.csv")),
+    '2024': pd.read_csv(os.path.join(data_path, "ng2024.csv")),
+    '2025': pd.read_csv(os.path.join(data_path, "ng2025.csv"))
     }
 
 
@@ -305,3 +305,4 @@ def show_Nagpur():
     st.dataframe(selected_data.head())    
 
         
+
