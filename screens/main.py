@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
+import os
 from components.navbar import navbar
 
 
@@ -299,3 +300,4 @@ def show_main():
     st.subheader("📑 Dataset Preview")
 
     st.dataframe(selected_data.head())
+
