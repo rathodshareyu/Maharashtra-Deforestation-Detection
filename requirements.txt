@@ -1,4 +1,8 @@
 streamlit
-plotly
 pandas
 numpy
+matplotlib
+plotly
+scikit-learn
+opencv-python
+tensorflow
