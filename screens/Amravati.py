@@ -5,6 +5,12 @@ import numpy as np
 import plotly.express as px
 import matplotlib.pyplot as plt
 from components.navbar import navbar
+from pathlib import Path
+
+try:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+except NameError:
+    BASE_DIR = Path.cwd()
 
 
 def show_Amravati():
@@ -297,6 +303,7 @@ def show_Amravati():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
