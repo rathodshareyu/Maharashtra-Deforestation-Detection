@@ -10,7 +10,7 @@ from pathlib import Path
 
 def show_Nagpur():
     navbar("Nagpur")
-     try:
+    try:
         # Works in normal Python execution
         BASE_DIR = Path(__file__).resolve().parent.parent
     except NameError:
@@ -305,4 +305,5 @@ def show_Nagpur():
     st.dataframe(selected_data.head())    
 
         
+
 
