@@ -103,10 +103,10 @@ def show_Aurangabad():
     )
 
      # Build path to images folder
-    img_path = os.path.join(BASE_DIR, "images", "akola.jpg")
+    img_path = os.path.join(BASE_DIR, "images", "arg.webp")
 
     # Show image
-    st.image(img_path, caption="Akola Maharashtra")
+    st.image(img_path, caption="Aurangabad Maharashtra")
 
     # Use a relative path for the image
     #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\arg.webp", caption="Aurangabad Maharashtra")
@@ -305,3 +305,4 @@ def show_Aurangabad():
     st.dataframe(selected_data.head())    
 
         
+
