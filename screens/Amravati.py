@@ -104,10 +104,10 @@ def show_Amravati():
     )
 
     # Build path to images folder
-    img_path = os.path.join(BASE_DIR, "images", "mh.webp")
+    img_path = os.path.join(BASE_DIR, "images", "Amt.webp")
 
     # Show image
-    st.image(img_path, caption="Primary Forest Loss in Maharashtra")
+    st.image(img_path, caption="Amravati Maharashtra")
 
     # Use a relative path for the image
     #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\Amt.webp", caption="Amravati")
@@ -306,6 +306,7 @@ def show_Amravati():
     st.dataframe(selected_data.head())    
 
         
+
 
 
 
