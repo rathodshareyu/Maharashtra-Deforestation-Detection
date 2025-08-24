@@ -37,20 +37,34 @@ def show_main():
     st.map(df)
 
 
-    
+    # Get the absolute path of the project root
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+    # Path to the data folder
+    data_path = os.path.join(BASE_DIR, "forest_data", "Maharashtra")
+
+    datasets = {
+    '2019': pd.read_csv(os.path.join(data_path, "mh2019.csv")),
+    '2020': pd.read_csv(os.path.join(data_path, "mh2020.csv")),
+    '2021': pd.read_csv(os.path.join(data_path, "mh2021.csv")),
+    '2022': pd.read_csv(os.path.join(data_path, "mh2022.csv")),
+    '2023': pd.read_csv(os.path.join(data_path, "mh2023.csv")),
+    '2024': pd.read_csv(os.path.join(data_path, "mh2024.csv")),
+    '2025': pd.read_csv(os.path.join(data_path, "mh2025.csv"))
+    }
 
 
 
     # Load datasets from CSV files
-    datasets = {
-        '2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2019.csv"),
-        '2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2020.csv"),
-        '2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2021.csv"),
-        '2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2022.csv"),
-        '2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2023.csv"),
-        '2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2024.csv"),
-        "2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2025.csv")
-    }
+    #datasets = {
+        #'2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2019.csv"),
+        #'2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2020.csv"),
+        #'2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2021.csv"),
+        #'2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2022.csv"),
+        #'2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2023.csv"),
+        #'2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2024.csv"),
+        #"2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\mh2025.csv")
+    #}
 
 
     # Sidebar dataset selection
@@ -283,4 +297,5 @@ def show_main():
     
     # ✅ Show dataset preview below charts
     st.subheader("📑 Dataset Preview")
+
     st.dataframe(selected_data.head())
