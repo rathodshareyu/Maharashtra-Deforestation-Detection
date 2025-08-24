@@ -22,9 +22,18 @@ def show_Datasets():
         # Display image
         st.image(img_path, caption="Primary Forest Loss in Maharashtra")
 
-        
+    
+    # Build the path to your dataset
+    csv_path = os.path.join(BASE_DIR, "forest_data", "Maharashtra", "MH-combine.csv")
 
-    df = pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\MH-combine.csv")
+    # Load CSV
+    df = pd.read_csv(csv_path)
+
+    st.write("Maharashtra Forest Data")
+    st.dataframe(df)    
+
+    
+    #df = pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Maharashtra\MH-combine.csv")
 
     # Show only the first 10 rows
     st.subheader("CSV Preview (first 10 rows)")
@@ -37,3 +46,4 @@ def show_Datasets():
     st.write("Null Values:", df.isnull().sum())
 
     st.write("Month:", df.Month.unique())
+
