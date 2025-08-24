@@ -96,8 +96,14 @@ def show_main():
         height=200,
     )
 
+    # Build path to images folder
+    img_path = os.path.join(BASE_DIR, "images", "mh.webp")
+
+    # Show image
+    st.image(img_path, caption="Primary Forest Loss in Maharashtra")
+
     # Use a relative path for the image
-    st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\mh.webp", caption="Primary Forest Loss in Maharashtra")
+    #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\mh.webp", caption="Primary Forest Loss in Maharashtra")
 
     components.html(
         """
@@ -300,4 +306,5 @@ def show_main():
     st.subheader("📑 Dataset Preview")
 
     st.dataframe(selected_data.head())
+
 
