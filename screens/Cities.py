@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from components.navbar import navbar
 
 def show_Cities():
@@ -6,17 +7,30 @@ def show_Cities():
     st.title("All Cities in Maharashtra")
     st.write("Click on button to open the deforestation data of cities in Maharashtra.")
 
+    # Project root (where app.py is)
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
     # --- First Row (3 columns) ---
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\Amt.webp",caption="Amravati Maharashtra")
+        #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\Amt.webp",caption="Amravati Maharashtra")
+        # Path to images
+        img_path = os.path.join(BASE_DIR, "images", "Amt.webp")
+
+        st.image(img_path, caption="Amravati Maharashtra")
+        
         if st.button("➡ Amravati Data", key="btn1"):
             st.session_state.page = "Amravati"
             st.rerun()
 
     with col2:
-        st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\nagpur.webp",caption="Nagpur Maharashtra")
+        #st.image(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\images\nagpur.webp",caption="Nagpur Maharashtra")
+        # Path to images
+        img_path = os.path.join(BASE_DIR, "images", "nagpur.webp")
+
+        st.image(img_path, caption="Amravati Maharashtra")
+        
         if st.button("➡ Nagpur Data", key="btn2"):
             st.session_state.page = "Nagpur"
             st.rerun()
@@ -47,3 +61,4 @@ def show_Cities():
         if st.button("⬅ Aurangabad Data", key="btn6"):
             st.session_state.page = "Aurangabad"
             st.rerun()
+
