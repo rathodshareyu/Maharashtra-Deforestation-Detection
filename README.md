@@ -3,6 +3,6 @@
 <p>Link to this website: https://maharashtra-deforestation-detectiongit-7ddyxv2cwpxrdcvobajdjy.streamlit.app/</p>
 <br>
 <p align="center">
-  <img src="images/Amt.webp" alt="A view of forest trees">
+  <img style="height:300px" src="images/Amt.webp" alt="A view of forest trees">
 </p>
 <p>This wesite is made by using Streamlit</p>
