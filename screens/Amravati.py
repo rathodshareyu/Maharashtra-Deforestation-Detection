@@ -9,6 +9,10 @@ from components.navbar import navbar
 
 def show_Amravati():
     navbar("Amravati")
+    # Get project root (where app.py lives)
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+    data_path = os.path.join(BASE_DIR, "forest_data", "Amravati")
+    
     #col1, col2= st.columns(2)
 
     #with col1:
@@ -38,19 +42,23 @@ def show_Amravati():
     st.map(data)
 
 
-
+     datasets = {
+        '2019': pd.read_csv(os.path.join(data_path, "amt2019.csv")),
+        '2020': pd.read_csv(os.path.join(data_path, "amt2020.csv")),
+        '2021': pd.read_csv(os.path.join(data_path, "amt2021.csv")),
+    }
 
 
     # Load datasets from CSV files
-    datasets = {
-        '2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2019.csv"),
-        '2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2020.csv"),
-        '2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2021.csv"),
-        '2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2022.csv"),
-        '2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2023.csv"),
-        '2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2024.csv"),
-        "2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2025.csv")
-    }
+    #datasets = {
+        #'2019': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2019.csv"),
+        #'2020': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2020.csv"),
+        #'2021': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2021.csv"),
+        #'2022': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2022.csv"),
+        #'2023': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2023.csv"),
+        #'2024': pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2024.csv"),
+        #"2025": pd.read_csv(r"C:\Users\parvi\OneDrive\Documents\stream--deforestation\forest_data\Amravati\amt2025.csv")
+    #}
 
     # Sidebar dataset selection
     st.sidebar.title("Select Dataset")
@@ -275,4 +283,5 @@ def show_Amravati():
     # ✅ Show dataset preview below charts
     st.subheader("📑 Dataset Preview")
     st.dataframe(selected_data.head())    
+
         
