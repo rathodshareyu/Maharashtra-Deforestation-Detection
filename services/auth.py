@@ -1,21 +1,18 @@
-import json
-import os
+import hashlib
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))   # services/
-DATA_FILE = os.path.join(BASE_DIR, "..", "data", "users.json")
 
-def load_users():
-    if not os.path.exists(DATA_FILE):
-        return {}
-    with open(DATA_FILE, "r") as f:
-        try:
-            return json.load(f)
-        except json.JSONDecodeError:
-            return {}
+# Simple in-memory user store (replace with DB in production)
+users = {"admin": hashlib.sha256("admin123".encode()).hexdigest()}
 
-def validate_user(username, password):
-    users = load_users()
-    # Debugging
-    print("DEBUG USERS:", users)
-    print("INPUT:", username, password)
-    return username in users and users[username] == password
+def hash_password(password: str) -> str:
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def validate_user(username: str, password: str) -> bool:
+    return users.get(username) == hash_password(password)
+
+def register_user(username: str, password: str) -> bool:
+    if username in users:
+        return False
+    users[username] = hash_password(password)
+    return True
+
